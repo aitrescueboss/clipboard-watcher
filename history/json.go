@@ -9,11 +9,14 @@ import (
   "github.com/pkg/errors"
 )
 
-type mJsonContents struct {
-  Contents []struct {
-    Content []string `json:"content"`
-  } `json:"contents"`
+type mJsonContent struct {
+  Content []string `json:"content"`
 }
+
+type mJsonContents struct {
+  Contents []mJsonContent `json:"contents"`
+}
+
 
 func newJson() *mJsonContents {
   return &mJsonContents{}
